@@ -38,7 +38,7 @@ class DBhelper(object):
 								"LEFT JOIN (wtf_MuscleGroup m, wtf_effort_lkup e, wtf_effort_multiplier_lkup x) "
 								"ON (w.MuscleGroup=m.id AND w.effort=e.id AND w.effort_multiplier=x.id)")
 
-				cursor.execute(sql, (user, exercise_id, exercise_count))
+				cursor.execute(sql)
 				result = cursor.fetchall()
 				return result
 		except Exception as e:
