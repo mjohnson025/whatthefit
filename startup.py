@@ -15,4 +15,4 @@ def tracker():
 	return render_template('tracker.html', exerciseLkupTable=exerciseLkupTable)
 
 if __name__ == "__main__":
-		application.run(host='0.0.0.0')
+    app.run(host='0.0.0.0')
