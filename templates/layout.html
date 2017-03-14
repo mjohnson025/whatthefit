@@ -35,7 +35,7 @@
 
 </head>
 
-<body >
+<body ng-app="whatthefit">
 <div id='wrapper'>
     <!-- Navigation baro -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -322,6 +322,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{{ url_for('static',filename='dist/js/sb-admin-2.js')}}"></script>
+
+    <!-- AG Controllers -->
+    <script src="{{ url_for('static',filename='controllers/workoutController.js')}}"></script>
 
 </body>
 
