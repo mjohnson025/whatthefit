@@ -1,6 +1,12 @@
 angular.module('whatthefit', []);
 
 angular.module('whatthefit')
+    .config(['$interpolateProvider', function($interpolateProvider) {
+        $interpolateProvider.startSymbol('{a');
+        $interpolateProvider.endSymbol('a}');
+    }]);
+
+angular.module('whatthefit')
     .controller('workoutController', workoutController);
 
 workoutController.$inject = ['$scope', '$http'];
