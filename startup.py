@@ -20,5 +20,16 @@ def tracker():
 		exerciseLkupTable=[1,1,2,3,4]
 		return render_template('tracker.html', exerciseLkupTable=json.dumps(exerciseLkupTable))
 
+
+#API
+@app.route('/api/insertIntoWorkoutTable/<int: exerciseId>/<int: exerciseCount>')
+def insertIntoWorkoutTable(exerciseId, exerciseCount):
+	helper = DBhelper()
+	try:
+		helper.insertWorkout('default',exerciseId, exerciseCount)
+		return make_response(200)
+	except Exception as e:
+		return make_response(400)
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

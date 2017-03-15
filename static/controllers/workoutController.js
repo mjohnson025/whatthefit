@@ -12,11 +12,23 @@ angular.module('whatthefit')
 workoutController.$inject = ['$scope', '$http'];
 
 function workoutController($scope, $http) {
-    //angular.element(document).ready(function(){
-  //console.log('test');
-	//$scope.test = 'test';
+
 	console.log('start');
 	$scope.selectedExercise = null;
+	$scope.exerciseCount = null;
+	$scope.submit = submit
+
+	function submit(){
+		if ($scope.selectedExercise === null || $scope.exerciseCount === null) {
+			return null;
+		}
+		var requestUrl = '/api/insertIntoWorkoutTable/'+$scope.selectedExercise.id + '/'+ $scope.exerciseCount
+		$http.get(requestUrl).then(function(){
+			alert("Data inserted into DB");
+		}, function(){
+			alert("Error");
+		});
+	}
 
 }
 //});}
