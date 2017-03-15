@@ -26,15 +26,15 @@
                                             <select class="form-control" ng-model='selectedExercise'>
                                             {% for exercise in exerciseLkupTable %}
 
-                                                <option>{{exercise.name}}</option>
+                                                <option ng-model="{{exercise}}">{{exercise.name}}</option>
                                             {% endfor %}
                                             </select>
                                             <label for="exerciseNumber">Muscle Group</label>
-                                            <span class="bg-info">{a selectedExercise.muscle_group a}</span>
+                                            <p class="bg-info">{a selectedExercise.muscle_group a}</p>
                                             <label for="exerciseNumber">Effort</label>
-                                            <span class="bg-info">{a selectedExercise.effort a}</span>
+                                            <p class="bg-info">{a selectedExercise.effort a}</p>
                                             <label for="exerciseNumber">Effort Multiplier</label>
-                                            <span class="bg-info">{a selectedExercise.effort_multiplier a}</span>
+                                            <p class="bg-info">{a selectedExercise.effort_multiplier a}</p>
                                             <label for="exerciseNumber">Exercise Number</label>
                                             <input type="number" class="form-control" id="exerciseNumber" placeholder="Exercise Number">
 
