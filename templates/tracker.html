@@ -26,7 +26,7 @@
                                             <select class="form-control" ng-model='selectedExercise'>
                                             {% for exercise in exerciseLkupTable %}
 
-                                                <option>{{exercise.name}}</option>
+                                                <option ng-value="{{exercise|safe}}" >{{exercise.name}}</option>
                                             {% endfor %}
                                             </select>
                                             <label for="exerciseNumber">Muscle Group</label>
