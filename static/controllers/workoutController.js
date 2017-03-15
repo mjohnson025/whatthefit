@@ -12,6 +12,9 @@ angular.module('whatthefit')
 workoutController.$inject = ['$scope', '$http'];
 
 function workoutController($scope, $http) {
-    $scope.selectedExercise = null;
-
+    //angular.element(document).ready(function(){
+  //console.log('test');
+	//$scope.test = 'test';
+	$scope.selectedExercise = null;
+//});
 }

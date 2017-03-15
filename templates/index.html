@@ -544,5 +544,14 @@
         </div>
         <!-- /#page-wrapper -->
 
+
+    {%endblock%}
+
+    {%block javascript%}
+        <!-- Morris Charts JavaScript -->
+    <script src="{{ url_for('static',filename='raphael/raphael.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='morrisjs/morris.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='data/morris-data.js')}}"></script>
+
     {%endblock%}
 

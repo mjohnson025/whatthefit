@@ -11,8 +11,12 @@ def index():
 @app.route('/tracker')
 def tracker():
 	helper = DBhelper()
-	exerciseLkupTable = helper.getExerciseLookup()
-	return render_template('tracker.html', exerciseLkupTable=exerciseLkupTable)
+	try:
+		exerciseLkupTable = helper.getExerciseLookup()
+		return render_template('tracker.html', exerciseLkupTable=exerciseLkupTable)
+	except Exception as e:
+		exerciseLkupTable=[1,1,2,3,4]
+		return render_template('tracker.html', exerciseLkupTable=exerciseLkupTable)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
