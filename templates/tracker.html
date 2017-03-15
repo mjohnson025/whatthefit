@@ -25,18 +25,18 @@
                                             <label>Exercise</label>
                                             <select class="form-control" ng-model='selectedExercise'>
                                             {% for exercise in exerciseLkupTable %}
-                                                <option ng-value="{id:{{exercise.id}}, muscleGroup:{{exercise.muscle_group}}, effort:{{exercise.effort}}, effortMultiplier:{{exercise.effort_multiplier}}  }">{{exercise.name}}</option>
+                                                <option ng-value="{id:'{{exercise.id}}', muscleGroup:'{{exercise.muscle_group}}', effort:'{{exercise.effort}}', effortMultiplier:'{{exercise.effort_multiplier}}'  }">{{exercise.name}}</option>
 
                                             {% endfor %}
                                             </select>
                                             <label for="exerciseNumber">Muscle Group</label>
-                                            <p class="bg-info">{a selectedExercise.muscle_group a}</p>
+                                            <p class="form-control">{a selectedExercise.muscleGroup a}</p>
                                             <label for="exerciseNumber">Effort</label>
-                                            <p class="bg-info">{a selectedExercise.effort a}</p>
+                                            <p class="form-control">{a selectedExercise.effort a}</p>
                                             <label for="exerciseNumber">Effort Multiplier</label>
-                                            <p class="bg-info">{a selectedExercise.effort_multiplier a}</p>
+                                            <p class="form-control">{a selectedExercise.effortMultiplier a}</p>
                                             <label for="exerciseNumber">Exercise Number</label>
-                                            <input type="number" class="form-control" id="exerciseNumber" placeholder="Exercise Number">
+                                            <input type="number" class="form-control" ng-model="exerciseNumber" id="exerciseNumber" placeholder="Exercise Number">
 
                                         </div>
 

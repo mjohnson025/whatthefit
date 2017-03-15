@@ -17,8 +17,6 @@ function workoutController($scope, $http) {
 	//$scope.test = 'test';
 	console.log('start');
 	$scope.selectedExercise = null;
-       setInterval(function(){
-	console.log($scope.selectedExercise);
-	},1000);
+
 }
 //});}
