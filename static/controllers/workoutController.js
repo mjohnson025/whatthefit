@@ -13,22 +13,27 @@ workoutController.$inject = ['$scope', '$http'];
 
 function workoutController($scope, $http) {
 
-	console.log('start');
-	$scope.selectedExercise = null;
-	$scope.exerciseCount = null;
-	$scope.submit = submit
+    console.log('start');
+    $scope.selectedExercise = null;
+    $scope.exerciseCount = null;
+    $scope.submit = submit
 
-	function submit(){
-		if ($scope.selectedExercise === null || $scope.exerciseCount === null) {
-			return null;
-		}
-		var requestUrl = '/api/insertIntoWorkoutTable/'+$scope.selectedExercise.id + '/'+ $scope.exerciseCount
-		$http.get(requestUrl).then(function(){
-			alert("Data inserted into DB");
-		}, function(){
-			alert("Error");
-		});
-	}
+    function submit() {
+        if ($scope.selectedExercise === null || $scope.exerciseCount === null) {
+            return null;
+        }
+        var requestUrl = '/api/insertIntoWorkoutTable/' + $scope.selectedExercise.id + '/' + $scope.exerciseCount
+        $http.get(requestUrl, {
+            params: {
+                exerciseid: $scope.selectedExercise.id,
+                exercisecount: $scope.exerciseCount
+            }
+        }).then(function() {
+            alert("Data inserted into DB");
+        }, function() {
+            alert("Error");
+        });
+    }
 
 }
 //});}

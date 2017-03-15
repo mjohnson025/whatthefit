@@ -22,8 +22,10 @@ def tracker():
 
 
 #API
-@app.route('/api/insertIntoWorkoutTable/<int: exerciseId>/<int: exerciseCount>')
+@app.route('/api/insertIntoWorkoutTable')
 def insertIntoWorkoutTable(exerciseId, exerciseCount):
+	exerciseId = request.args.get('exerciseid')
+	exerciseCount = request.args.get('exercisecount')
 	helper = DBhelper()
 	try:
 		helper.insertWorkout('default',exerciseId, exerciseCount)
