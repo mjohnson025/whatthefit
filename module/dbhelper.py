@@ -18,10 +18,11 @@ class DBhelper(object):
 			self.__openConnection()
 			with self.connection.cursor() as cursor:
 				# Create a new record
-				sql = "INSERT INTO wtf_workouts (add_user, exercise_id, exercise_count) VALUES (%s, %i, %i)"
-				cursor.execute(sql, (user, exercise_id, exercise_count))
+				sql = "INSERT INTO `wtf_workouts` (`add_user`, `exercise_id`, `exercise_count`) VALUES (%s, %s, %s)"
+				cursor.execute(sql, (user, exerciseId, exerciseCount))
 				self.connection.commit()
 		except Exception as e:
+			print(e)
 			raise e
 		finally:
 			if self.connection:

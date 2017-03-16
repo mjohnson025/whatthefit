@@ -1,4 +1,4 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, request, make_response
 from flask import render_template
 from module.dbhelper import DBhelper
 import json
@@ -23,15 +23,16 @@ def tracker():
 
 #API
 @app.route('/api/insertIntoWorkoutTable')
-def insertIntoWorkoutTable(exerciseId, exerciseCount):
+def insertIntoWorkoutTable():
 	exerciseId = request.args.get('exerciseid')
 	exerciseCount = request.args.get('exercisecount')
+
 	helper = DBhelper()
 	try:
 		helper.insertWorkout('default',exerciseId, exerciseCount)
-		return make_response(200)
+		return make_response("Call Success",200)
 	except Exception as e:
-		return make_response(400)
+		return make_response("Bad Request", 400)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
