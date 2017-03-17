@@ -20,6 +20,9 @@ def tracker():
 		exerciseLkupTable=[1,1,2,3,4]
 		return render_template('tracker.html', exerciseLkupTable=json.dumps(exerciseLkupTable))
 
+@app.route('/update')
+def update():
+	return render_template('update.html')
 
 #API
 @app.route('/api/insertIntoWorkoutTable')

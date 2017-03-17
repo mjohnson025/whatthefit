@@ -22,7 +22,7 @@ function workoutController($scope, $http) {
         if ($scope.selectedExercise === null || $scope.exerciseCount === null) {
             return null;
         }
-        var requestUrl = '/api/insertIntoWorkoutTable/';
+        var requestUrl = '/api/insertIntoWorkoutTable';
         $http.get(requestUrl, {
             params: {
                 exerciseid: $scope.selectedExercise.id,
