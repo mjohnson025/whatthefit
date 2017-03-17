@@ -47,3 +47,37 @@ class DBhelper(object):
 		finally:
 			if self.connection:
 				self.connection.close()
+
+	def getEffortLookup(self):
+
+		try:
+			self.__openConnection()
+			with self.connection.cursor() as cursor:
+				# Create a new record
+				sql =	( "SELECT id, description FROM wtf_effort_lkup")
+
+				cursor.execute(sql)
+				result = cursor.fetchall()
+				return result
+		except Exception as e:
+			raise e
+		finally:
+			if self.connection:
+				self.connection.close()
+
+	def getEffortMultiplierLookup(self):
+
+		try:
+			self.__openConnection()
+			with self.connection.cursor() as cursor:
+				# Create a new record
+				sql =	( "SELECT id, description FROM wtf_effort_multiplier_lkup")
+
+				cursor.execute(sql)
+				result = cursor.fetchall()
+				return result
+		except Exception as e:
+			raise e
+		finally:
+			if self.connection:
+				self.connection.close()
