@@ -28,7 +28,7 @@ class DBhelper(object):
 			if self.connection:
 				self.connection.close()
 
-	def getWorkout(self)
+	def getWorkout(self):
 		try:
 			self.__openConnection()
 			with self.connection.cursor() as cursor:
