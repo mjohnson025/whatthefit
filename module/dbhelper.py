@@ -33,15 +33,15 @@ class DBhelper(object):
 			self.__openConnection()
 			with self.connection.cursor() as cursor:
 				sql = ( "SELECT w.add_user, w.add_date, w.exercise_count, s.name exercise_name, m.name muscle_group, ef.description effort, em.description effort_multiplier "
-								"FROM wtf_workouts w"
-								"LEFT JOIN wtf_exercises s"
-								"ON w.exercise_id = s.id"
-								"LEFT JOIN wtf_MuscleGroup m"
-								"ON s.MuscleGroup = m.id"
-								"LEFT JOIN wtf_effort_lkup ef"
-								"ON s.effort = ef.id"
-								"LEFT JOIN wtf_effort_multiplier_lkup em"
-								"ON s.effort_multiplier = em.id")
+								"FROM wtf_workouts w "
+								"LEFT JOIN wtf_exercises s "
+								"ON w.exercise_id = s.id "
+								"LEFT JOIN wtf_MuscleGroup m "
+								"ON s.MuscleGroup = m.id "
+								"LEFT JOIN wtf_effort_lkup ef "
+								"ON s.effort = ef.id "
+								"LEFT JOIN wtf_effort_multiplier_lkup em "
+								"ON s.effort_multiplier = em.id;")
 				cursor.execute(sql)
 				result = cursor.fetchall()
 				#print(result)

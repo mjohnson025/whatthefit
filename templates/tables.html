@@ -29,6 +29,7 @@
                                         <th>Effort</th>
                                         <th>Count</th>
                                         <th>Effort Mulx</th>
+					<th>Date</th>
                                     </tr>
                                 </thead>
                                 {% for workout in workouts %}
@@ -40,6 +41,7 @@
                                         <td>{{workout.effort}}</td>
                                         <td>{{workout.exercise_count}}</td>
                                         <td>{{workout.effort_multiplier}}</td>
+					<td>{{workout.add_date}}</td>
                                     </tr>
                                 </tbody>
                                 {%endfor%}
