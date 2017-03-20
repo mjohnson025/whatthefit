@@ -32,9 +32,9 @@ class DBhelper(object):
 		try:
 			self.__openConnection()
 			with self.connection.cursor() as cursor:
-				sql = ( "SELECT w.add_user w.add_date w.exercise_count s.name exercise_name m.name muscle_group ef.name effort em.name effort_multiplier "
+				sql = ( "SELECT w.add_user, w.add_date, w.exercise_count, s.name exercise_name, m.name muscle_group, ef.description effort, em.description effort_multiplier "
 								"FROM wtf_workouts w"
-								"LEFT JOIN wtf_exercised s"
+								"LEFT JOIN wtf_exercises s"
 								"ON w.exercise_id = s.id"
 								"LEFT JOIN wtf_MuscleGroup m"
 								"ON s.MuscleGroup = m.id"
@@ -44,7 +44,7 @@ class DBhelper(object):
 								"ON s.effort_multiplier = em.id")
 				cursor.execute(sql)
 				result = cursor.fetchall()
-				print(result)
+				#print(result)
 				return result
 		except Exception as e:
 			print(e)
