@@ -24,8 +24,8 @@ def tracker():
 def update():
 	return render_template('update.html')
 
-@app.route('/table')
-def table():
+@app.route('/tables')
+def tables():
 	helper = DBhelper()
 	try:
 		workouts = helper.getWorkout()
