@@ -24,6 +24,16 @@ def tracker():
 def update():
 	return render_template('update.html')
 
+@app.route('/table')
+def table():
+	helper = DBhelper()
+	try:
+		workouts = helper.getWorkout()
+		return render_template('tables.html', workouts=workouts)
+	except Exception as e:
+		raise e
+
+
 #API
 @app.route('/api/insertIntoWorkoutTable')
 def insertIntoWorkoutTable():
